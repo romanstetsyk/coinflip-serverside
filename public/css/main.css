@@ -15,9 +15,9 @@
 }
 
 /* Animation */
-.coin {
+.animate-coin {
     transform-style:preserve-3d;
-    animation: turnAround 4s 1 ease;
+    animation: turnAround 2s 1 ease;
 }
 @keyframes turnAround {
     0%{
@@ -35,13 +35,13 @@
     border-radius:50%;
 }
 .coin > .tails {
-    transform: scaleX(-1); /* flip the image horizontally. needed for 3d*/
+    transform: translateZ(3px); /* default size of the coin is visible */
     background-image: url('../images/tails.jpeg');
     background-position: 0;
     background-size: 150px;
 }
 .coin > .heads {
-    transform: translateZ(3px);
+    transform: scaleX(-1); /* flip the image horizontally. needed for 3d*/;
     background-image: url('../images/heads.jpeg');
     background-position: 0;
     background-size: 150px;
