@@ -1,0 +1,83 @@
+* {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* position places both sides of a coin to the same place */
+.coin {
+    position:relative;
+    width:150px;
+    height: 150px;
+    margin: 0 auto; /* center horizontaly */
+}
+.coin > div {
+    position:absolute;
+}
+
+/* Animation */
+.coin {
+    transform-style:preserve-3d;
+    animation: turnAround 4s 1 ease;
+}
+@keyframes turnAround {
+    0%{
+      transform:rotateY(0deg);
+    }
+    100%{
+      transform:rotateY(3600deg);
+    }
+}
+
+.coin > .circle {
+    background-color:rgb(100, 100, 100);
+    width:150px;
+    height:150px;
+    border-radius:50%;
+}
+.coin > .tails {
+    transform: scaleX(-1); /* flip the image horizontally. needed for 3d*/
+    background-image: url('../images/tails.jpeg');
+    background-position: 0;
+    background-size: 150px;
+}
+.coin > .heads {
+    transform: translateZ(3px);
+    background-image: url('../images/heads.jpeg');
+    background-position: 0;
+    background-size: 150px;
+}
+
+button {
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 30px 0;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
